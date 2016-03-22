@@ -13,8 +13,7 @@ router.get('/', function(req, res) {
 
 router.get('/:id', function(req, res) {
 	Reservation.findById(req.params.id, function(err, reservations) {
-		if(err) return res.status(400).send(err);
-		res.send(reservations);
+		res.status(err ? 400 : 200).send(err || reservations);
 	});
 });
 

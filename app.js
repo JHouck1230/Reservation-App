@@ -6,9 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/restReservations', function(err) {
+const mongoUrl = process.env.MONGOLAB_URI || 'mongodb://localhost/restReservations';
+
+mongoose.connect(mongoUrl, function(err) {
   if(err) return console.log(err);
-  console.log(`Mongodb connected!`);
+  console.log(`Mongodb connected! ${mongoUrl}`);
 });
 
 var app = express();
