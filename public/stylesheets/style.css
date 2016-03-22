@@ -1,8 +1,16 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	text-align: center;
 }
 
-a {
-  color: #00B7FF;
+#dateLabel {
+	margin-left: 30%;
+}
+
+.strike {
+  text-decoration: line-through;
+  color: #9BA0A0;
+}
+
+.checked {
+	background-color: #1de9b6;
 }

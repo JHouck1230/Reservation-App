@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Reservation Book</title>
+	
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="bower_components/Materialize/dist/css/materialize.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="bower_components/Materialize/dist/js/materialize.min.js"></script>
+	<script src="main.js"></script>
+	<script src="components/navbar/navbar.js"></script>
+	<script src="components/home/home.js"></script>
+	<script src="components/home/homeCtrl.js"></script>
+	<script src="components/calendar/calendar.js"></script>
+	<script src="components/calendar/calendarCtrl.js"></script>
+	<script src="components/newRes/newRes.js"></script>
+	<script src="components/newRes/newResCtrl.js"></script>
+	<script src="components/services/resService.js"></script>
+
+</head>
+<body ng-app='resApp'>
+	<ui-view></ui-view>
+</body>
 </html>

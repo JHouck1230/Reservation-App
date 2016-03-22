@@ -1,0 +1,54 @@
+<navbar></navbar>
+<div class="container">
+	<h1>Home</h1>
+	<div class="row">
+	  <div class="col s1">&nbsp;</div>
+		<table class="striped col s11">
+			<thead>
+				<tr>
+					<th></th>
+					<th>Time</th>
+					<th>Name</th>
+					<th>Party Size</th>
+					<th>Checked In</th>
+					<th>Seated</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat='res in reserves track by $index' ng-class='{strike: res.seated, checked: res.checkedIn'>
+					<td>
+						<button ng-click='deleteRes(res)'>
+							<a class="waves-effect waves-light btn"><i class="material-icons">delete</i></a>
+						</button>
+						<button ng-hide='res.editing' ng-click='editRes(res)'>
+							<a class="waves-effect waves-light btn"><i class="material-icons">description</i></a>
+						</button>
+						<button ng-show='res.editing' ng-click='saveRes(res)'>
+							<a class="waves-effect waves-light btn"><i class="material-icons">thumb_up</i></a>
+						</button>
+					</td>
+					<td>
+						<input ng-show='res.editing' ng-model='res.time' max="{{minDatetimeLocal | date:'yyyy-MM-ddT22:00:00'}}" min="{{minDatetimeLocal | date:'yyyy-MM-ddT10:00:00'}}" type="datetime-local" class="validate">
+						<span ng-hide='res.editing'>{{res.time | date : 'h:mm a, M/d/yy'}}</span>
+					</td>
+					<td>
+						<input ng-show='res.editing' ng-model='res.name' id="name" type="text" class="validate">
+						<span ng-hide='res.editing'>{{res.name}}</span>
+					</td>
+					<td>
+						<input ng-show='res.editing' ng-model='res.size' id="size" type="size" class="validate">
+						<span ng-hide='res.editing'>{{res.size}}</span>
+					</td>
+					<td>
+						<input ng-click='saveRes(res)' id='checkIn' ng-model='res.checkedIn' type="checkbox">
+						<label for="checkIn"></label>
+					</td>
+					<td>
+						<input ng-click='saveRes(res)' id='seated' ng-model='res.seated' type="checkbox">
+						<label for="seated"></label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

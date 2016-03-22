@@ -1,0 +1,41 @@
+<navbar></navbar>
+<h1>New Reservation</h1>
+<div class="container">
+  <div class="row">
+    <div class="col s1">&nbsp;</div>
+    <form class="col s11" name='resForm' ng-submit='submitResForm(resForm.$invalid)' novalidate>
+      <div class="row">
+        <div class="input-field col s6">
+          <input ng-model='res.time' max="{{minDatetimeLocal | date:'yyyy-MM-ddT22:00:00'}}" min="{{minDatetimeLocal | date:'yyyy-MM-ddT10:00:00'}}" type="datetime-local" class="validate" required>
+          <label id='dateLabel' for="date">Date/Time</label>
+        </div>
+        <div class="input-field col s6">
+          <input ng-model='res.name' id="name" type="text" class="validate" required>
+          <label for="name">Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s4">
+          <input ng-model='res.size' id="size" type="size" class="validate" required>
+          <label for="size">Party Size</label>
+        </div>
+        <div class="input-field col s4">
+          <input ng-model='res.checkedIn' id="checkIn" type="checkbox" class="validate">
+          <label for="checkIn">Checked In</label>
+        </div>
+        <div class="input-field col s4">
+          <input ng-model='res.seated' id="seated" type="checkbox" class="validate">
+          <label for="seated">Seated</label>
+        </div>
+      </div>
+      <div class="row"></div>
+      <div class="row">
+        <div class="col s12">
+            <button ng-disabled='resForm.$invalid' ng-click='createRes()' class="btn waves-effect waves-light btn-large" type="submit" name="action">Submit
+              <i class="material-icons right">send</i>
+            </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

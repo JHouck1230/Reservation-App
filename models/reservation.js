@@ -7,7 +7,6 @@ var Reservation = mongoose.model('Reservation', {
   time: Date,
   name: String,
   size: Number,
-  allergies: [String],
   checkedIn: Boolean,
   seated: Boolean
 });

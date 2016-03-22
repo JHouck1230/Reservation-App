@@ -30,7 +30,7 @@ router.put('/:id', function(req, res) {
 	Reservation.findById(req.params.id, function(err, reservation) {
 		if(err) return res.status(400).send(err);
 		for(var key in req.body) {
-			reservation[key] = req.body[key].split(/\W/).filter((ele) => (ele)); 
+			reservation[key] = req.body[key]; 
 		}
 		reservation.save(function(err) {
 			if(err) return res.status(400).send(err);
